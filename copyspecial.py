@@ -41,8 +41,9 @@ def copy_to(paths, dir):
 
 
 def zip_to(paths, zippath):
-    cmd = ["zip", "-j", dir] + paths
-    subprocess.call(cmd)
+    cmd = ["zip", "-j", zippath]
+    cmd.extends(paths)
+    subprocess.run(cmd)
 
 
 def main():
